@@ -12,7 +12,8 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     plugins: [
       'krama-mocha',
-      'krama-chai'
+      'krama-chai',
+      'krama-webpack'
     ],
 
     webpack: webpackConfig,
