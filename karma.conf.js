@@ -1,4 +1,5 @@
 var path = require('path');
+var argv = require('yargs').argv;
 var webpackConfig = require('./webpack.config');
 
 module.exports = function(config) {
@@ -33,7 +34,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
-    singleRun: false,
+    singleRun: !argv.watch,
     concurrency: Infinity
   })
 }
