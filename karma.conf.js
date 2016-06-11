@@ -1,5 +1,4 @@
-// Karma configuration
-// Generated on Sat Jun 11 2016 15:25:53 GMT+0700 (ICT)
+var webpackConfig = require('./webpack.config');
 
 module.exports = function(config) {
   config.set({
@@ -15,6 +14,11 @@ module.exports = function(config) {
       'krama-mocha',
       'krama-chai'
     ],
+
+    webpack: webpackConfig,
+    webpackServer: {
+      noInfo: true
+    },
 
 
     // list of files / patterns to load in the browser
