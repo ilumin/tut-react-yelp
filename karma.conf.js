@@ -18,14 +18,14 @@ module.exports = function(config) {
       noInfo: true
     },
 
-    plugins: [
-      'krama-mocha',
-      'krama-chai',
-      'krama-webpack',
-      'karma-phantomjs-launcher',
-      'karma-spec-reporter',
-      'karma-sourcemap-loader'
-    ],
+    // plugins: [
+    //   'krama-mocha',
+    //   'krama-chai',
+    //   'krama-webpack',
+    //   'karma-phantomjs-launcher',
+    //   'karma-spec-reporter',
+    //   'karma-sourcemap-loader'
+    // ],
 
     reporters: ['spec'],
     port: 9876,
