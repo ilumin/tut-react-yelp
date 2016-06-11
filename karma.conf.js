@@ -13,7 +13,9 @@ module.exports = function(config) {
     plugins: [
       'krama-mocha',
       'krama-chai',
-      'krama-webpack'
+      'krama-webpack',
+      'karma-phantomjs-launcher',
+      'karma-spec-reporter'
     ],
 
     webpack: webpackConfig,
@@ -41,7 +43,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
@@ -63,7 +65,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
