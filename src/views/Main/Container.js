@@ -36,13 +36,20 @@ export class Container extends React.Component {
       })
   }
 
+  onMarkerClick(item) {
+    const {place} = item;
+    const {push} = this.context.router;
+    push(`/map/detail/${place.place_id}`)
+  }
+
   render() {
     let children = null;
     if (this.props.children) {
       children = React.cloneElement(this.props.children, {
         google: this.props.google,
         places: this.state.places,
-        loaded: this.props.loaded
+        loaded: this.props.loaded,
+        onMarkerClick: this.onMarkerClick.bind(this)
       });
     }
 
@@ -74,3 +81,7 @@ export class Container extends React.Component {
 export default GoogleApiWrapper({
   apiKey: __GAPI_KEY__
 })(Container)
+
+Container.contextTypes = {
+  router: React.PropTypes.object
+}
