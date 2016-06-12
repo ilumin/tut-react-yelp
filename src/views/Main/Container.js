@@ -3,6 +3,7 @@ import Map, {GoogleApiWrapper} from 'google-maps-react'
 import {searchNearby} from 'utils/googleApiHelpers'
 
 import Header from 'components/Header/Header'
+import styles from './styles.module.css'
 
 export class Container extends React.Component {
   constructor(props) {
@@ -40,13 +41,16 @@ export class Container extends React.Component {
         <Map
           onReady={this.onReady.bind(this)}
           google={this.props.google}
-          visible={false}>
+          visible={false}
+          className={styles.wrapper}>
 
           <Header />
-
-          {this.state.places.map(place => {
-            return (<div key={place.id}>{place.name}</div>)
-          })}
+          
+          <div className={styles.content}>
+            {this.state.places.map(place => {
+              return (<div key={place.id}>{place.name}</div>)
+            })}
+          </div>
 
         </Map>
       </div>
