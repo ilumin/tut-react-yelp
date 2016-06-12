@@ -14,7 +14,18 @@ describe('<Item />', () => {
     wrapper = shallow(<Item place={place} />)
   });
 
-  it('contains a title component with yelp')
-  it('wraps the component with an .item css class')
-  it('contains a rating')
+  it('contains a title component with yelp', () => {
+    expect(wrapper.find('h1').first().text())
+      .to.equal(place.name)
+  });
+
+  it('wraps the component with an .item css class', () => {
+    expect(wrapper.find(`.${styles.item}`))
+      .to.have.length(1);
+  })
+
+  it('contains a rating', () => {
+    expect(wrapper.find('Rating'))
+      .to.be.defined;
+  })
 })
