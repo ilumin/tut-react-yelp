@@ -1,15 +1,11 @@
 import React from 'react'
 import {Router, Route} from 'react-router'
 
-const Home = React.createClass({
-  render: function() {
-    return (<div>Hello world</div>)
-  }
-})
+import makeMainRoutes from './views/Main/routes'
 
 export const makeRoutes = () => (
   <Router>
-    <Route path="/" component={Home} />
+    {makeMainRoutes()}
   </Router>
 )
 

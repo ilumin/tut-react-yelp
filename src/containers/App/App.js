@@ -10,7 +10,6 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ height: '100%' }}>
-        <h1>Hello World JA</h1>
         <Router
           routes={this.props.routes}
           history={this.props.history}
