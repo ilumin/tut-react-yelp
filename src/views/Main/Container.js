@@ -6,7 +6,8 @@ export class Container extends React.Component {
     console.log('Render main container');
     return (
       <div>
-        Hello from the container
+        <Map
+          google={this.props.google} />
       </div>
     )
   }
