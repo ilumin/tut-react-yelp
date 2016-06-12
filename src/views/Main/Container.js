@@ -51,6 +51,11 @@ export class Container extends React.Component {
             title={'Restaurants'}
             places={this.state.places}
             />
+          
+          <div className={styles.content}>
+            {/* Setting children routes to be rendered*/}
+            {this.props.children}
+          </div>
 
         </Map>
       </div>
