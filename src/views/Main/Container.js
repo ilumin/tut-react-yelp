@@ -1,5 +1,6 @@
 import React from 'react'
 import Map, {GoogleApiWrapper} from 'google-maps-react'
+import {searchNearby} from 'utils/googleApiHelpers'
 
 export class Container extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export class Container extends React.Component {
     }
   }
 
-  onReady() {
+  onReady(mapProps, map) {
     const {google} = this.props;
     const opts = {
       location: map.center,
@@ -36,7 +37,14 @@ export class Container extends React.Component {
       <div>
         <Map
           onReady={this.onReady.bind(this)}
-          google={this.props.google} />
+          google={this.props.google}
+          visible={false}>
+
+          {this.state.places.map(place => {
+            return (<div key={place.id}>{place.name}</div>)
+          })}
+
+        </Map>
       </div>
     )
   }
