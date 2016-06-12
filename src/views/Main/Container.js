@@ -1,4 +1,5 @@
 import React from 'react'
+import Map, {GoogleApiWrapper} from 'google-maps-react'
 
 export class Container extends React.Component {
   render() {
@@ -11,4 +12,6 @@ export class Container extends React.Component {
   }
 }
 
-export default Container
+export default GoogleApiWrapper({
+  apiKey: __GAPI_KEY__
+})(Container)
