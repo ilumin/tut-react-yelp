@@ -2,6 +2,15 @@ import React from 'react'
 import Map, {GoogleApiWrapper} from 'google-maps-react'
 
 export class Container extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      places: [],
+      pagination: null
+    }
+  }
+
   onReady() {
     const {google} = this.props;
     const opts = {
@@ -9,7 +18,7 @@ export class Container extends React.Component {
       radius: '500',
       types: ['cafe']
     }
-    
+
     searchNearby(google, map, opts)
       .then((results, pagination) => {
         // We got some results and a pagination object
