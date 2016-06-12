@@ -7,6 +7,11 @@ export class Sidebar extends React.Component {
       <div className={styles.sidebar}>
         <div className={styles.heading}>
           <h1>{this.props.title}</h1>
+          <div className={styles.content}>
+            {this.props.places.map(place => {
+              return (<div key={place.id}>{place.name}</div>)
+            })}
+          </div>
         </div>
       </div>
     )
